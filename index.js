@@ -2,8 +2,8 @@
 
 
 // Create element given id tag name, CSS classes, its content and HTML attibutes
-function newEl(tag, classes, content, attrs) {
-	var el = document.createElement(tag);
+const newEl = (tag, classes, content, attrs) => {
+	let el = document.createElement(tag);
 
 	if(classes) {
 		if(typeof(classes) === 'string')
@@ -22,9 +22,8 @@ function newEl(tag, classes, content, attrs) {
 
 	if(attrs) {
 		for(attr in attrs) {
-			if(attrs.hasOwnProperty(attr)) {
+			if(attrs.hasOwnProperty(attr))
 				el[attr] = attrs[attr];
-			}
 		};
 	};
 
@@ -33,16 +32,16 @@ function newEl(tag, classes, content, attrs) {
 
 
 // Insert element(s) inside a given parent element
-function insertEls(parent, child) {
+const insertEls = (parent, child) => {
 	if(arguments.length === 2) {
 		parent.appendChild(child);
 
 		return;
 	}
 	else if(arguments.length > 2) {
-		var children = Array.prototype.slice.call(arguments, 1);
+		let children = Array.prototype.slice.call(arguments, 1);
 
-		for(var i = 0; i < children.length; i++) {
+		for(let i = 0; i < children.length; i++) {
 			parent.appendChild(children[i]);
 		};
 
