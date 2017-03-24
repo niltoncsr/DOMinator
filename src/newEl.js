@@ -1,6 +1,12 @@
-// Create element given id tag name, CSS classes, its content and HTML attibutes
-const newEl = (tag, classes, content, attrs) => {
-	let el = document.createElement(tag);
+const insertEls = require('./insertEls');
+
+// Create element given its tag name, CSS classes, its content and HTML attibutes
+const newEl = (tagName, id, classes, content, attrs) => {
+	let el = document.createElement(tagName);
+
+	if(id) {
+		el.id = id;
+	}
 
 	if(classes) {
 		if(typeof(classes) === 'string')
@@ -22,7 +28,7 @@ const newEl = (tag, classes, content, attrs) => {
 			if(attrs.hasOwnProperty(attr))
 				el[attr] = attrs[attr];
 		};
-	};
+	}
 
 	return el;
 };
