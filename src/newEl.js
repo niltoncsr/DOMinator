@@ -33,4 +33,4 @@ const newEl = (tagName, id, classes, content, attrs) => {
 	return el;
 };
 
-module.exports = { newEl: newEl };
+module.exports = newEl;

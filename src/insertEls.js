@@ -16,4 +16,4 @@ const insertEls = (parent, child) => {
 	}
 };
 
-module.exports = { insertEls: insertEls };
+module.exports = insertEls;
