@@ -1,8 +1,15 @@
-const newEl = require('./newEl');
+;(() => {
+	if(window && window.document) {
 
-const insertEls = require('./insertEls');
+		const newEl = require('./newEl');
+		const insertEls = require('./insertEls');
 
-module.exports = {
-	newEl: newEl,
-	insertEls: insertEls
-}
+		module.exports = {
+			newEl: newEl,
+			insertEls: insertEls
+		};
+	}
+	else {
+		throw new ReferenceError('No reference to window.document.')
+	}
+})();
